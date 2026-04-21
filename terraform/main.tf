@@ -10,3 +10,7 @@ resource "aws_instance" "telecom" {
     Name = "telecom-server"
   }
 }
+
+output "public_ip" {
+  value = aws_instance.telecom.public_ip
+}

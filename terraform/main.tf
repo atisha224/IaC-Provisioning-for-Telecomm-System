@@ -21,7 +21,7 @@ provider "aws" {
 
 resource "aws_instance" "telecom" {
   ami           = "ami-0e670eb768a5fc3d4"
-  instance_type = "t2.micro"
+  instance_type = "t3.micro"
 
   tags = {
     Name = "telecom-server"

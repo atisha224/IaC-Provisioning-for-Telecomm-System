@@ -32,11 +32,13 @@ jobs:
         working-directory: ./terraform
 
       - name: Terraform Plan
-        run: terraform plan
+        run: terraform plan -input=false
         working-directory: ./terraform
+        env:
+          TF_VAR_GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
 
       - name: Terraform Apply
-        run: terraform apply -auto-approve
+        run: terraform apply -auto-approve -input=false
         working-directory: ./terraform
         env:
           TF_VAR_GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}

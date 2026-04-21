@@ -34,7 +34,7 @@ resource "aws_instance" "telecom" {
               sudo systemctl start docker
               sudo systemctl enable docker
 
-              sudo docker run -d -p 8000:8000 -e GROQ_API_KEY=${GROQ_API_KEY} telecom-app
+              sudo docker run -d -p 8000:8000 -e GROQ_API_KEY=${var.GROQ_API_KEY} telecom-app
               EOF
 }
 

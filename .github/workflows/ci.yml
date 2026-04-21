@@ -38,3 +38,6 @@ jobs:
       - name: Terraform Apply
         run: terraform apply -auto-approve
         working-directory: ./terraform
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          
